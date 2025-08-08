@@ -1,0 +1,68 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: url(../images/bg0.jpg) no-repeat;
+  background-size: cover;
+}
+/* 모바일일째 햄버거바 나오듯이 */
+h1 {
+  display: block;
+}
+h2 {
+  display: block;
+}
+
+h3 {
+  display: block;
+}
+
+/* 1200px */
+@media all and (max-width: 1200px) {
+  body {
+    background: url(../images/bg1.jpg) no-repeat;
+    h1 {
+      display: block;
+    }
+    h2 {
+      display: none;
+    }
+    h3 {
+      display: none;
+    }
+  }
+}
+/* 760px */
+@media all and (max-width: 768px) {
+  body {
+    background: url(../images/bg2.jpg) no-repeat;
+
+    h1 {
+      display: none;
+    }
+    h2 {
+      display: block;
+    }
+    h3 {
+      display: none;
+    }
+  }
+}
+/* 390px */
+@media all and (max-width: 390px) {
+  body {
+    background: url(../images/bg3.jpg) no-repeat;
+    h1 {
+      display: none;
+    }
+    h2 {
+      display: none;
+    }
+    h3 {
+      display: block;
+    }
+  }
+}

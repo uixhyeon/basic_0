@@ -1,0 +1,101 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+h1 {
+  font-size: 5vw;
+}
+h2 {
+  /*
+    font-size: 1vw;
+     1px까지 줄 수 있다
+    너무 남용하지 말자. 
+    만약 한다면 꼭 min해서 
+    11px 이하는 떨어지지 않게 하자
+     */
+  /* font-size: clamp(최솟값, 기본값, 최대값); */
+  font-size: clamp(11px, 5vw, 32px);
+}
+/* 5vw = 32px
+→ 1vw = 32 / 5 = 6.4px
+→ 100vw = 6.4 * 100 = 640px
+ */
+/* 
+ 5vw = 16px
+→ 1vw = 16 / 5 = 3.2px
+→ 100vw = 3.2 * 100 = 320px */
+
+/* img{
+    padding: 0;
+}
+display block 해도 사라짐
+이미지여백    
+아래에 해 놓았음
+*/
+.container {
+  width: 100%;
+  background-color: antiquewhite;
+  /* 먼저 틀이있아애 */
+}
+.card {
+  width: 80%;
+  /* 선생님은 80-90% 보이기 자연스러워서. 100%해도됌 */
+  max-width: 700px;
+  /* 맥스위스 하는 이유 불쾌하게 너무크고 안맞음
+    정도이상은 안크게 설정 */
+  min-width: 270px;
+  background-color: aquamarine;
+  margin: auto;
+  /* 마진오토 화면의 중간으로 */
+}
+/* 다른 li를 넣을 예정이먄 꼭 > 하기 */
+.card li {
+  display: flex;
+  align-items: center;
+  gap: 2%;
+  /* 2% 20px비슷한 크기. 갭도 같이 줄이기위함*/
+  padding: 2%;
+}
+.img-box {
+  width: 60%;
+}
+.img-box img {
+  display: block;
+  width: 100%;
+}
+.card-txt {
+  width: 40%;
+  background-color: blueviolet;
+}
+
+/* 반응형 */
+/* 태블릿 768 모바일  */
+@media (max-width: 768px) {
+  .card li {
+    flex-direction: column;
+  }
+  .img-box {
+    width: 100%;
+  }
+  .card-txt {
+    width: 100%;
+    padding: 2%;
+  }
+}
+/* mobaile */
+
+@media (max-width: 390px) {
+  .card-txt h3 {
+    font-size: 16px;
+  }
+  .card-txt p {
+    font-size: 14px;
+  }
+}
