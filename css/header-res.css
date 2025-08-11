@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+  /* 원래 16px이다 */
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+.header {
+  width: 100%;
+  height: 80px;
+  background-color: #eb7070;
+}
+.header-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  background-color: rgb(184, 255, 255);
+  justify-content: space-between;
+}
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.nav-manu {
+  display: flex;
+}
+.auth-icons {
+  display: flex;
+  align-items: center;
+}
+.auth-icon {
+  display: flex;
+}
+.hamburger {
+  /* display: flex; */
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  border: 0;
+  gap: 3px;
+  background: none;
+}
+/* 햄버거 메뉴 */
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  border: 2px;
+  /* margin: 3px 0; 아님갭 */
+}
+/* --- */
+.nav-manu {
+  display: flex;
+  gap: 70px;
+}
+.auth-icons {
+  display: flex;
+  align-items: center;
+gap: 10px
+}
+
+.auth-icon{
+      display: flex;
+   
+    background-color: #eb7070;
+   width: 130px;
+   height: 50px;
+   border-radius: 5px;
+   gap: 5px;
+   padding: 10px;
+
+}
