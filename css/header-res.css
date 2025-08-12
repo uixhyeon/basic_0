@@ -1,53 +1,100 @@
-@charset "UTF-8";
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 html {
   font-size: 16px;
   /* 원래 16px이다 */
+  background-color: aliceblue;
 }
+
 ul,
 li {
   list-style: none;
 }
+
 a {
   text-decoration: none;
   color: #333;
   font-weight: 600;
 }
+
 .header {
   width: 100%;
-  height: 80px;
-  background-color: #eb7070;
+  height: 100%;
+  /* background-color: #eb7070; */
 }
+
 .header-container {
-  width: 100%;
+  width: 80%;
   max-width: 1200px;
   margin: auto;
   display: flex;
   align-items: center;
-  background-color: rgb(184, 255, 255);
+  /* background-color: rgb(184, 255, 255); */
   justify-content: space-between;
 }
+
 .logo {
   font-size: 1.8rem;
   font-weight: bold;
 }
+
+.logo:hover {
+  color: rgb(43, 109, 233);
+}
+
 .nav-manu {
   display: flex;
+  gap: 20px;
+}
+
+.nav-manu li a {
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+}
+.nav-manu li a:hover {
+  color: #fff;
+  background-color: rgb(43, 109, 233);
+  border-radius: 5px;
 }
 .auth-icons {
+  /* width: calc(100% / 2); */
+  padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
+  gap: 2%;
 }
+.icon {
+  font-size: 16px;
+}
+
 .auth-icon {
   display: flex;
+  /* background-color: #eb7070; */
+  width: 130px;
+  height: 40px;
+  border-radius: 5px;
+  gap: 5px;
+  padding: 10px;
+ 
+}
+.signuo-icon{
+  background-color: blue;
+  color: #fff;
+}
+ /* min-width: 298px; */
+.login-icon{
+  background-color: #fff;
+border: solid 1px blue;
+}
+.login-icon{
+  /* 확인 필요 */
+  color: blue;
 }
 .hamburger {
-  /* display: flex; */
   display: none;
   flex-direction: column;
   cursor: pointer;
@@ -55,6 +102,7 @@ a {
   gap: 3px;
   background: none;
 }
+
 /* 햄버거 메뉴 */
 .hamburger span {
   width: 25px;
@@ -63,25 +111,58 @@ a {
   border: 2px;
   /* margin: 3px 0; 아님갭 */
 }
-/* --- */
-.nav-manu {
-  display: flex;
-  gap: 70px;
+/* 모바일일때 사이드 메뉴 */
+
+.mobile-menu{
+  /* display: none; */
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100vh;
+  background-color: #fff;
+  padding: 20px;
+  padding-top: 50px;
+  z-index: 9999;
+  transition: all 0.3s;
 }
-.auth-icons {
-  display: flex;
-  align-items: center;
-gap: 10px
+/* 
+클래스를 추가(html아님) 
+이게 있어애 자바에 연계 넣을수 있다
+*/
+.mobile-menu.active{
+opacity: 1;
+visibility: visible;
+
+}
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+     transition: all 0.3s;
 }
 
-.auth-icon{
-      display: flex;
-   
-    background-color: #eb7070;
-   width: 130px;
-   height: 50px;
-   border-radius: 5px;
-   gap: 5px;
-   padding: 10px;
 
+/* 반응형 */
+@media screen and (max-width:768px){
+  .nav-manu, .auth-icons{
+    display: none;
+  }
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  border: 0;
+  gap: 3px;
+  background:#333;
+}
+
+.header-container {
+  width: 90%;
 }
